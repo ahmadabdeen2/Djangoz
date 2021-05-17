@@ -1,0 +1,233 @@
+@media screen and (max-width: 360px) {
+    body html
+    {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    .AnalysisD
+    {
+        display: none !important;
+    }
+    .Analysisr
+    {
+        display: block !important;
+    }
+    .Analysisr img
+    {
+        margin-top: 100px !important;
+    }
+    button.submitbtn.hvr-hang {
+        width: 100px !important;
+    }
+    .ourresponsivegoal
+    {
+        display: block !important;
+    }
+    .ourgoal img
+    {
+        display: none !important;
+    }
+    .challenge 
+    {
+        display: none !important;
+    }
+    .rchallenge 
+    {
+        display: block !important;
+    }
+    .Unique
+    {
+        display: none !important;
+    }
+    .rUnique
+    {
+        display: block !important;
+    }
+    .ourgoal
+    {
+        display: none !important;
+    }
+   .ourgoalr
+    {
+        display: block !important;
+    }
+    .creativer
+   {
+      display:block !important;
+    }
+   .creative
+{
+  display:none !important;
+}
+  }
+
+  @media screen and (max-width: 550px) {
+    body html
+    {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    .AnalysisD
+    {
+        display: none !important;
+    }
+    .Analysisr
+    {
+        display: block !important;
+    }
+    .Analysisr img
+    {
+        margin-top: 100px !important;
+    }
+    button.submitbtn.hvr-hang {
+        width: 100px !important;
+    }
+    .ourresponsivegoal
+    {
+        display: block !important;
+    }
+    .ourgoal img
+    {
+        display: none !important;
+    }
+    .challenge 
+    {
+        display: none !important;
+    }
+    .rchallenge 
+    {
+        display: block !important;
+    }
+    .Unique
+    {
+        display: none !important;
+    }
+    .rUnique
+    {
+        display: block !important;
+    }
+    .ourgoal
+    {
+        display: none !important;
+    }
+   .ourgoalr
+    {
+        display: block !important;
+    }
+    .creativer
+{
+  display:block !important;
+}
+.creative
+{
+  display:none !important;
+}
+  }
+
+
+  @media screen  and (min-width: 1200px) 
+  {
+    .AnalysisD
+    {
+        display: block !important;
+    }
+    .Analysisr
+    {
+        display: none !important;
+    }
+
+    .ourresponsivegoal
+    {
+        display: none !important;
+    }
+    .ourgoal img
+    {
+        display: block !important;
+    }
+    .challenge 
+    {
+        display: block !important;
+    }
+    .rchallenge
+    {
+        display: none !important;
+    }
+    .Unique
+    {
+        display: block !important;
+    }
+    .rUnique
+    {
+        display: none !important;
+    }
+    .ourgoal
+    {
+        display: block !important;
+    }
+   .ourgoalr
+    {
+        display: none !important;
+    }
+    .creativer
+{
+  display:none !important;
+}
+.creative
+{
+  display:block !important;
+}
+    
+  }
+
+  @media screen  and (min-device-width: 1600px) 
+  {
+    .AnalysisD
+    {
+        display: block !important;
+    }
+    .Analysisr
+    {
+        display: none !important;
+    }
+
+    .ourresponsivegoal
+    {
+        display: none !important;
+    }
+    .ourgoal img
+    {
+        display: block !important;
+    }
+    .challenge 
+    {
+        display: block !important;
+    }
+    .rchallenge 
+    {
+        display: none !important;
+    }
+    .Unique
+    {
+        display: block !important;
+    }
+    .rUnique
+    {
+        display: none !important;
+    }
+    .ourgoal
+    {
+        display: block !important;
+    }
+   .ourgoalr
+    {
+        display: none !important;
+    }
+    .creativer
+{
+  display:none !important;
+}
+.creative
+{
+  display:block !important;
+}
+  }

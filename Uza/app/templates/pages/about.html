@@ -1,0 +1,318 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/mdb.min.css" /> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/hover.css' %}" >
+    <title>About</title>
+    
+    <style>
+      a {
+    text-decoration: none !important;
+}
+
+.autohide{
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+}
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out !important;
+}
+.scrolled-up{
+    transform:translateY(0); transition: all 0.3s ease-in-out !important;
+}
+    </style>
+
+ <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(){
+    
+    el_autohide = document.querySelector('.autohide');
+    
+    // add padding-top to bady (if necessary)
+    navbar_height = document.querySelector('.navbar').offsetHeight;
+    document.body.style.paddingTop = navbar_height + 'px';
+
+    if(el_autohide){
+      
+      var last_scroll_top = 0;
+      window.addEventListener('scroll', function() {
+             let scroll_top = window.scrollY;
+           if(scroll_top < last_scroll_top) {
+                el_autohide.classList.remove('scrolled-down');
+                el_autohide.classList.add('scrolled-up');
+            }
+            else {
+                el_autohide.classList.remove('scrolled-up');
+                el_autohide.classList.add('scrolled-down');
+            }
+            last_scroll_top = scroll_top;
+
+      }); 
+      // window.addEventListener
+
+    }
+    // if
+    
+  }); 
+  // DOMContentLoaded  end
+
+
+</script> 
+  </head>
+  <body>
+    <!-- Start your project here-->
+     
+    <nav class="autohide navbar navbar-expand-lg navbar-light bg-light" >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="{% static 'img/u-logo.png' %}" style="width: 80px;margin-left: 30px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link hvr-underline-from-left" aria-current="page" href="{% url 'app:home' %}">Home</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link active hvr-underline-from-left" aria-current="page" href="{% url 'app:about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-left" href="{% url 'app:work' %}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-left" href="{% url 'app:getintouch' %}">Get in touch</a>
+            </li>
+
+      
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 abouthead">
+                <h1 data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">ABOUT US</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid firstbackgound">
+        <div class="row">
+            <div class="col-md-12 ">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container ourgoal">
+        <div class="row">
+            <div class="col-md-6 " style="margin-top: -10px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+                <p style="font-size: 40px;"><b>WHO WE ARE</b></p>
+
+               <img src="{% static 'img/Uzability Arrow-01.png' %}" style="width: 20%;margin-top: 250px;">
+            </div>
+            <div class="col-md-6 " data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+              <h3 style="font-size: 35px; color:#304FFE;">About us</h3>
+                <p style="font-size: 18px; line-height: 30px;text-align: justify;" >
+                    
+                  At Uzability, our goal is to make great branding and UX/UI accessible to the world.
+                  We want to harness the explosive energy of next generation branding and UX/UI possibilities to drive business, increase engagement, and boost conversions. With a focus on breathtaking web site and app design, we create memorable experiences and compelling brand messages that work across platforms and change how you interact with customers.
+                  Based in Riyadh, Saudi Arabia, and serving the world, Uzability offers full-service, digitally driven, results-focused solutions that help brands stand out and succeed. Contact us today — we’d love to tell your story.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container ourgoalr">
+      <div class="row">
+          <div class="col-md-6 " style="margin-top: -10px;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+              <p style="font-size: 40px;"><b>WHO WE ARE</b></p>
+
+             <img src="{% static 'img/Uzability Arrow-01.png' %}" style="width: 20%;margin-top: 20px; transform: rotate(90deg) !important;">
+          </div>
+          <div class="col-md-6 " data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000" style="margin-top: 60px;">
+            <h3 style="font-size: 35px; color:#304FFE;">About us</h3>
+              <p style="font-size: 18px; line-height: 30px;text-align: justify;" >
+                  
+                At Uzability, our goal is to make great branding and UX/UI accessible to the world.
+                We want to harness the explosive energy of next generation branding and UX/UI possibilities to drive business, increase engagement, and boost conversions. With a focus on breathtaking web site and app design, we create memorable experiences and compelling brand messages that work across platforms and change how you interact with customers.
+                Based in Riyadh, Saudi Arabia, and serving the world, Uzability offers full-service, digitally driven, results-focused solutions that help brands stand out and succeed. Contact us today — we’d love to tell your story.
+              </p>
+          </div>
+      </div>
+  </div>
+   
+
+    <div class="container ourgoal" >
+        <div class="row">
+           
+            <div class="col-md-6 goalimages" data-aos="zoom-in">
+                <img src="{% static '/img/2.jpg' %}" loading="eager" style="width: 100%;transform: translate3d(0px, -4.4675%, 0px); will-change: transform;"/>
+            </div>
+             
+            <div class="col-md-6 " data-aos="zoom-in">
+                <img src="{% static '/img/3.jpg' %}" loading="eager"  style="width: 100%;transform: translate3d(0px, -4.4675%, 0px); will-change: transform "/>
+            </div>
+            
+        
+    </div>
+</div>
+
+<div class="container ourresponsivegoal" >
+  <div class="row">
+    <div class="col-md-12 ">
+          <img src="{% static '/img/2.jpg' %}"  style="width: 100%;margin-top: 100px;"/>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 " >
+      <img src="{% static '/img/3.jpg' %}" style="width: 100%;margin-top: 20px;"/>
+  </div>
+  </div>
+</div>
+
+<div class="container howwework" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="font-size: 40px;">HOW WE WORK</h2>
+      <p style="font-size: 18px;color: #A7A7A7;text-align: justify;">
+        Nulla sodales massa sit amet mi faucibus, id dapibus elit iaculis liquam tincidunt at ex ut cursus nec lacus lobortis pulvinar nis.
+      </p>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>
+
+
+<div class="container creative" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-6" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+      <h2 style="    font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;color: #000;">Creative Idea is Not <br>Success Project</h2>
+    </div>
+    <div class="col-md-6" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+      <h3 style="font-size: 35px;color: #304FFE;font-size: 27px;">Praesent turpis dolor, egestas id enim eget</h3>
+      <p style="font-size: 18px;color: #000000;line-height: 30px;text-align: justify;">
+        
+Donec tempor ipsum et pretium luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc at purus congue, auctor sem quis, molestie dui. Curabitur vel odio massa. Fulla ar lacus eu ipsum suscipit molestie. Aliquam elementum tortor in magna pulvinar sed dolor quis nulla porttitor elementum.
+</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container creativer" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-6" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+      <h2 style="    font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;color: #000;">Creative Idea is Not <br>Success Project</h2>
+    </div>
+    <div class="col-md-6" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+      <h3 style="font-size: 35px;color: #304FFE;font-size: 27px;">Praesent turpis dolor, egestas id enim eget</h3>
+      <p style="font-size: 18px;color: #000000;line-height: 30px;text-align: justify;">
+        
+Donec tempor ipsum et pretium luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc at purus congue, auctor sem quis, molestie dui. Curabitur vel odio massa. Fulla ar lacus eu ipsum suscipit molestie. Aliquam elementum tortor in magna pulvinar sed dolor quis nulla porttitor elementum.
+</p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid workbackgound1">
+  <div class="row">
+      <div class="col-md-12 ">
+          
+      </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-6" style="margin-top: -10px ;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+      <h2 style="    font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;">We Work
+        <br> Only Step by Step</h2>
+    </div>
+    <div class="col-md-6"  data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+      <h3 style="font-size: 25px;color: #304FFE;">Mauris consequat dui a lorem faucibus ultrices</h3>
+      <p style="font-size: 18px;color: #000000;line-height: 30px;text-align: justify;">
+        Donec tempor ipsum et pretium luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc at purus congue, auctor sem quis, molestie dui. Curabitur vel odio massa. Fulla ar lacus eu ipsum suscipit molestie. Aliquam elementum tortor in magna pulvinar.  
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer style="background-color: black;padding: 50px;margin-top: 100px;">
+
+
+  <div class="container">
+     <div class="row">
+       <div class="col-md-3">
+       <a href="{% url 'app:getintouch' %}" >
+        <p style="color:#fff" class="hvr-underline-from-center"> Get in touch</p>
+      </a> 
+           <br>
+      <a href="{% url 'app:about' %}" >
+        <p style="color:#fff" class="hvr-underline-from-center"> About US</p>
+      </a> 
+      <br>
+      <a href="{% url 'app:work' %}" >
+        <p style="color:#fff" class="hvr-underline-from-center"> Projects</p>
+      </a> 
+      <br>
+      <a href="{% url 'app:home' %}" >
+        <p style="color:#fff" class="hvr-underline-from-center"> Home</p>
+      </a> 
+       </div>
+      
+       <div class="col-md-3" style ='margin-left:130px;'>
+       <p style="color:#fff">Riyadh<p style="color:#fff">Jeddah</p><p style="color:#fff">Eastern Province</p><p style="color:#fff">Neom</p></p> 
+       <br>
+       <a href="#"><i class="fab fa-twitter" style="color:white"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fab fa-facebook-square" style="color:white"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fab fa-linkedin-in" style="color:white"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fab fa-youtube" style="color:white"></i></a> 
+       </div>
+       <div class="col-md-3" style = 'margin-left:130px;'>
+         <p style="color:#fff">Uzability Design Studio</p>
+         <p style="color:rgba(238, 238, 238, 0.534)">Copyright @2021 <br>
+          All Rights Reeserved.</p>
+       </div>
+     </div>
+  </div>
+
+  </footer>
+    <!-- End your project here-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{% static 'js/all.js' %}"></script>
+
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

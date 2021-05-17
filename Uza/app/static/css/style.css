@@ -1,0 +1,458 @@
+@font-face {
+    font-family: "SofiaPro";
+    src: url(../font/SofiaPro/Sofia\ Pro\ Light.otf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "SofiaPro";
+    src: url(../font/SofiaPro/Sofia\ Pro\ Medium.otf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+body html
+{
+    min-height: 100vh !important;
+    width: 100vw !important;
+    overflow-x:hidden !important;
+}
+::selection
+{
+    background-color: #000;
+    color: #fff;
+}
+
+h1,h2,h3
+{
+    font-family: "SofiaPro";
+    font-weight: bold;
+}
+
+p,nav,a,span
+{
+    font-family: "SofiaPro";
+}
+
+.mainheading h1
+{
+   
+    font-size: 80px !important;
+    margin-top: 150px;
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 1px #000;
+    
+}
+.mainsubheading
+{
+    line-height: 27px;
+    
+}
+.mainsubheading p {
+    font-size: 27px;
+}
+
+.maincontent {
+    font-size: 20px !important;
+    margin-top: 60px;
+    color: #A7A7A7;
+}
+
+.worksection
+{
+    margin-top: 25%;
+}
+.worksection h2
+{
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.mainsubheading p
+{
+    font-size: 20px;
+}
+/* .services
+{
+    min-height: 700px;
+    background-image: url(../img/face.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+/* .services1
+{
+    min-height: 700px;
+    background-image: url(../img/nana.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services2
+{
+   min-height: 700px;
+    background-image: url(../img/riyadh.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services3
+{
+    min-height: 700px;
+    background-image: url(../img/sigma.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services4
+{
+   min-height: 700px;
+    background-image: url(../img/sleepiest.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.services5
+{
+   min-height: 700px;
+    background-image: url(../img/ulesson.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.abouthead h1
+{
+    font-size: 65px !important;
+    margin-top: 150px;
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 1px #000;
+    text-align: center;
+}
+
+.firstbackgound, .firstServicesbackgound
+{
+    margin-top: 50px;
+    min-height: 500px;
+    background-image: url(../img/about.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ourgoal
+{
+    margin-top: 200px;
+}
+.ourgoal h3
+{
+    font-size: 23px;
+    line-height: 40px;
+    color: #A7A7A7;
+}
+
+
+
+.goalimages
+{
+    display: block;
+    overflow: hidden;
+    margin-top: -160px;
+    transition: transform .4s,-webkit-transform .4s,-moz-transform .4s,-o-transform .4s;
+}
+
+.container.howwework {
+    margin-top: 100px;
+}
+
+.workbackgound1
+{
+    margin-top: 50px;
+    min-height: 500px;
+    background-image: url(../img/about.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* .cb-checkbox_rounded-box
+{
+padding: 0 32px;
+height: 65px;
+font-size: 18px;
+-webkit-border-radius: 90px;
+-moz-border-radius: 90px;
+border-radius: 90px;
+} */
+
+/* .cb-checkbox_rounded-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px rgba(0,0,0,.1) solid;
+    transition: border-color .2s;
+} */
+
+
+/* .checkbox {
+    position: relative;
+    display: inline-block;
+} */
+
+/* .checkbox-input {
+    position: absolute;
+    left: -9999px;
+}
+.checkbox-label {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    color: #000;
+    letter-spacing: 0.57px;
+    height: 34px;
+    line-height: 34px;
+    padding: 2px 14px 0;
+    border-radius: 18px;
+    margin: 20px 10px 0 0;
+   border: 1px solid #000 !important;
+    transition: color 0.3s, background 0.3s;
+    will-change: color, background;
+}
+
+.checkbox-input:checked + label {
+    color: #fff;
+    background: #000;
+} */
+input#nameinput {
+    border: none;
+    border-bottom: 1px solid #D6D6D6;
+    border-radius: 0px;
+    /* padding: 20px; */
+    margin-top: 50px;
+}
+
+input#emailinput {
+    border: none;
+    border-bottom: 1px solid #D6D6D6;
+    border-radius: 0px;
+    /* padding: 20px; */
+    margin-top: 50px;
+}
+
+input#numberinput {
+    border: none;
+    border-bottom: 1px solid #D6D6D6;
+    border-radius: 0px;
+    /* padding: 20px; */
+    margin-top: 50px;
+}
+
+input#tellproject {
+    border: none;
+    border-bottom: 1px solid #D6D6D6;
+    border-radius: 0px;
+    /* padding: 20px; */
+    margin-top: 50px;
+}
+
+.projectimage
+{
+    text-align: center  !important;
+}
+.projectimage img
+{
+    width: 80% !important;
+}
+
+.sociallink
+{
+    color: #fff;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+}
+
+/* .sociallink:hover
+{
+    background: #fff;
+    color: #000 !important;
+    text-align: center;
+    border-radius: 30px;
+} */
+
+nav.bg-light {
+    background-color: #fff !important;
+    width: 100%  !important;
+    /* position: rela  !important; */
+}
+
+.title h2
+{
+    font-size: 25px  !important;
+    font-weight: bold !important;
+    padding-top: 10px !important;
+}
+
+/* nav ul li a:hover::after {
+    width: 100% !important;
+} */
+
+/* nav ul li a::after {
+    content: "" !important;
+    position: absolute !important;
+    background-color: #000 !important;
+    height: 0px !important;
+    width: 0 !important;
+    left: 0 !important;
+    bottom: 4px !important;
+    transition: 0.3s !important;
+}
+footer a:hover::after {
+    width: 100% !important;
+} */
+
+/* footer a::after {
+    content: "" !important;
+    position: absolute !important;
+    background-color: #fff !important;
+    height: 0px !important;
+    width: 0 !important;
+    left: 0 !important;
+    bottom: 4px !important;
+    transition: 0.3s !important;
+} */
+
+.casestudybtn{
+    color: #304FFE !important;
+    border:none !important;
+    background-color: #fff !important;
+   margin-top: 10px !important;
+   font-family: "SofiaPro" !important;
+   font-weight: 100;
+   position: relative;
+   padding: 0px !important;
+}
+
+button :hover
+:after
+{
+    content: "" !important;
+    position: absolute  !important;
+    left: 50%  !important;
+    bottom: 0  !important;
+    transform: translateX(-50%) scaleX(0)  !important;
+    -webkit-transform:translateX(-50%) scaleX(0)  !important;
+    -webkit-transform-origin: 50% 50%  !important;
+    transform-origin: 50% 50%  !important;
+    width: 100%  !important;
+    height: 2px  !important;
+    background: rgb(203, 206, 29) !important;
+    -webkit-transform:transform 250ms !important;
+    transition: transform 250ms !important;
+}
+
+button :hover::after
+{
+    -webkit-transform:translateX(-50%) scaleX(1)  !important;
+    transform:translateX(-50%) scaleX(1)  !important;
+}
+
+/* a.nav-link :active
+{
+    padding-right: 40px !important;
+}
+
+a.nav-link
+{
+    padding-right: 40px !important;
+} */
+.btn
+{
+    background: #fff !important;
+    color: #000  !important;
+    border: none !important;
+    font-family: "SofiaPro";
+    font-style: normal;
+    font-weight: 100;
+    border: 0px solid;
+}
+
+.btn:hover
+{
+    background: #fff !important;
+    color: #000  !important;
+    border: none !important;
+    font-family: "SofiaPro";
+    font-style: normal;
+    font-weight: 100;
+    border: 0px solid;
+}
+
+::placeholder
+{
+   color: #DCDCDC !important;
+   /* font-size: 35px !important; */
+   font-family: "SofiaPro";
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    padding: 20px 20px 20px 20px;
+}
+
+a.nav-link
+{
+    padding: 0px !important;
+    margin: 10px !important;
+}
+
+
+.form-check
+{
+    font-family: "SofiaPro";
+}
+
+.lastbox
+{
+    padding: 80px !important;
+    background-color: #F4F4F6;
+}
+
+nav li
+{
+    margin-right: 50px  !important;
+}
+.submitbtn
+{
+    color: #304FFE !important;
+    background: #fff !important;
+    width: 12%;
+    padding: 5px !important;
+    border-radius: 60px;
+    border: 2px solid #304FFE !important;
+}
+
+input#flexCheckDefault {
+    width: 24px;
+    height: 24px;
+    border-radius: 0px !important;
+}
+label.form-check-label {
+    padding: 0px 0px 0px 20px;
+    font-size: 18px;
+}

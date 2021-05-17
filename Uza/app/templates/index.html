@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Uzability Design Studio</title>
+    
+    <style>
+          a#menu {
+    text-decoration: none !important;
+}
+a
+{
+  text-decoration: none !important;
+}
+
+body{
+    background: #fff !important;
+    /* font-family:Arial, Helvetica; */
+    font-size:12px;
+    color:#fff;
+
+}
+
+.center-con {
+    display: flex;
+    margin-top: -70px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    
+}
+
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: 30%;margin-top: -3px;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+.segunda{margin-left: 8px;}
+.next {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.autohide{
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+}
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out !important;
+}
+.scrolled-up{
+    transform:translateY(0); transition: all 0.3s ease-in-out !important;
+}
+
+
+    </style>
+
+    <!-- MDB icon -->
+    <link rel="icon" href="{% static 'img/mdb-favicon.ico' %}" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+
+    <!-- MDB -->
+    <!-- <link rel="stylesheet" href="css/mdb.min.css" /> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/hover.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script src="./js/bundle.js"></script> -->
+    <script src="{% static 'js/all.js' %}" ></script>
+
+   
+    
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(){
+        
+        el_autohide = document.querySelector('.autohide');
+        
+        // add padding-top to bady (if necessary)
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+    
+        if(el_autohide){
+          
+          var last_scroll_top = 0;
+          window.addEventListener('scroll', function() {
+                 let scroll_top = window.scrollY;
+               if(scroll_top < last_scroll_top) {
+                    el_autohide.classList.remove('scrolled-down');
+                    el_autohide.classList.add('scrolled-up');
+                }
+                else {
+                    el_autohide.classList.remove('scrolled-up');
+                    el_autohide.classList.add('scrolled-down');
+                }
+                last_scroll_top = scroll_top;
+    
+          }); 
+          // window.addEventListener
+    
+        }
+        // if
+        
+      }); 
+      // DOMContentLoaded  end
+    
+    
+    </script> 
+   
+
+  </head>
+  <body>
+    <!-- Start your project here-->
+
+    
+
+    
+    <nav class="autohide navbar navbar-expand-lg navbar-light bg-light" >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="{% static 'img/u-logo.png' %}" style="width: 80px;margin-left: 30px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link active hvr-underline-from-left" aria-current="page" href="{% url 'app:home' %}">Home</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link hvr-underline-from-left" aria-current="page" href="{% url 'app:about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-left" href="{% url 'app:work' %}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-underline-from-left" href="{% url 'app:getintouch' %}">Get in touch</a>
+            </li>
+
+      
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    
+    
+   
+
+    <video preload="auto" loop="" muted="" autoplay="" playsinline="" style="position: static;
+    top: auto;
+    left: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: none;">
+      <source src="{% static 'img/videos/2.mp4' %}" type="video/mp4">
+    </video>
+    
+
+
+  
+    <div class="arrow bounce">
+      <!-- <a class="fa fa-arrow-down fa-2x" href="#" style="color: #fff;"></a> -->
+      <a href="#">
+        <img src="{% static 'img/downarrow.svg' %}" style="width: 45px;">
+      </a>
+    </div>
+    <style>
+      
+
+      
+      .arrow {
+        text-align: center !important;
+        margin: 55% 50% !important;
+        
+      }
+      .bounce {
+        -moz-animation: bounce 2s infinite ;
+        -webkit-animation: bounce 2s infinite ;
+        animation: bounce 2s infinite ;
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0) ;
+        }
+        40% {
+          transform: translateY(-50px) ;
+        }
+        60% {
+          transform: translateY(-35px) ;
+        }
+      }
+
+      .container-fluid .row .container
+      {
+        width: 100% !important;
+      }
+    </style>
+  
+
+
+    <div class="container" style="margin-top: 100px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-12">
+          <p data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">SERVICES</p>
+          <h2 style="font-size: 55px;font-weight: bold;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We build modern <br> experiences</h2>
+          <p style="font-size: 20px;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+            Tubik can help visualize even the craziest ideas converting them into elegant designs,<br> awesome experiences and catchy brands.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container title" style="margin-top: 20px;" style="width: 100%;">
+      <div class="row">
+        
+        <div class="col-md-3 " data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h1 class="hvr-shrink" style="font-size: 50px;color: #304FFE;"><b>A</b></h1>
+          <h2 >Analysis</h2>
+          <p style="font-size: 15px;text-align: justify;" class="ml-5">
+            A strategic and tactical approach is essential for long-term goals, but what’s even more important is keeping deadlines and promises. Our work gets results and we never hide behind paperwork.
+          </p>
+        </div>
+        <div class="col-md-3" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h1 class="hvr-shrink" style="font-size: 50px;color: #304FFE;"><b>B</b></h1>
+          <h2>Branding</h2>
+          <p style="font-size: 15px;text-align: justify;" class="ml-5">
+            Our mission is to create a strong, positive perception for you and your product using compelling imagery and precise messaging, all wrapped in an intuitive, straightforward package.
+          </p>
+        </div>
+        <div class="col-md-3 m" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h1 class="hvr-shrink" style="font-size: 50px;color: #304FFE;"><b>C</b></h1>
+          <h2>Customer Experience</h2>
+          <p style="font-size: 15px;text-align: justify;" class="ml-5">
+            We won’t settle unless you are meeting your goals. We’ll create a framework that defines interactions between you and your customers throughout the entire customer journey, from the first contact to becoming a loyal and committed customer.
+          </p>
+        </div>
+        <div class="col-md-3 m" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h1 class="hvr-shrink" style="font-size: 50px;color: #304FFE;"><b>D</b></h1>
+          <h2>Digital Design</h2>
+          <p style="font-size: 15px;text-align: justify;" class="ml-5">
+            We mesh the elements of line, colour, texture, size, shape, space, and value that capture the imagination and make a lasting, positive impression that will define your brand and make it stand out in crowded markets.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="container" style="margin-top: 100px;">
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h2 style="color: rgba(0,0,0,.9);
+          font-size: 20px;
+          font-weight: 600;">What we do</h2>
+        </div>
+        <div class="col-md-8" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <p style="font-size: 28px;line-height: 40px;">
+            A strategic and tactical approach is essential for long-term goals, but what’s even more important is keeping deadlines and promises. Our work gets results and we never hide behind paperwork.
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="container" style="margin-top: 250px;margin-bottom: 250px;">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h2 style="color: rgba(0,0,0,.9);
+          font-size: 80px;
+          font-weight: 600;text-align: center;">Analysis</h2>
+        </div>
+        </div>
+    </div> -->
+
+
+    <div class="container" style="margin-top: 100px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-12">
+          <p data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">PROJECTS</p>
+          <h2 style="font-size: 55px;font-weight: bold;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We build modern <br> experiences</h2>
+          <p style="font-size: 20px;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+            Tubik can help visualize even the craziest ideas converting them into elegant designs,<br> awesome experiences and catchy brands.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container AnalysisD" style="margin-top: 20px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/1.png" style="width: 100%;" />
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-7" style="margin-top: 200px;
+        margin-bottom: 200px;" > 
+         <p style="font-size: 30px;font-weight: bold;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Analysis</p>
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We will work with you to examine your product’s or service’s features, costs, availability, quality, and appearance to create a premium-level branding strategy that customers will love.</p>
+          
+          
+
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="container  AnalysisD" style="margin-top: 100px; " style="width: 100%;">
+      <div class="row">
+        <div class="col-md-7" style="margin-top: 200px;
+        margin-bottom: 200px;">
+         <p style="font-size: 30px;font-weight: bold;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Branding</p>
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Our mission is to create a strong, positive perception for you and your product using compelling imagery and precise messaging, all wrapped in an intuitive, straightforward package.</p>
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/2.png" style="width: 100%;" />
+        </div>
+
+        
+       
+      </div>
+    </div>
+
+    <div class="container AnalysisD" style="margin-top: 100px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/3.jpg" style="width: 100%;" />
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-7" style="margin-top: 200px;
+        margin-bottom: 200px;">
+         <p style="font-size: 30px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Customer experience</p>
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We won’t settle unless you are meeting your goals. We’ll create a framework that defines interactions between you and your customers throughout the entire customer journey, from the first contact to becoming a loyal and committed customer.</p>
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container AnalysisD" style="margin-top: 100px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-7" style="margin-top: 200px;
+        margin-bottom: 200px;">
+         <p style="font-size: 30px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Digital design</p>
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We mesh the elements of line, colour, texture, size, shape, space, and value that capture the imagination and make a lasting, positive impression that will define your brand and make it stand out in crowded markets.</p>
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/4.jpg" style="width: 100%;" />
+        </div>
+
+        
+       
+      </div>
+    </div>
+
+    
+
+    <div class="container AnalysisD" style="margin-top: 100px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/5.png" style="width: 100%;" />
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-7" style="margin-top: 200px;
+        margin-bottom: 200px;">
+         <p style="font-size: 30px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Experience</p>
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Don’t settle for ordinary — let’s dream together. We’ll help you create a unique experience for your customers that makes your brand stand out from the competition, including a customised look, feel, and user experience.</p>
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="container" style="margin-top: 200px">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h2 style="font-size: 80px;">
+            Benefits of working <br> with us
+          </h2>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 100px;">
+        <div class="col-md-6">
+          <img src="https://cdn.cuberto.com/cb/img/services/advantage/1.png" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h3 style="font-size: 28px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Time zones ain’t no thing</h3>
+          <p style="font-size: 18px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Wherever you are in the world, you’ll feel like we’re right around the corner. With 10 years of experience, our business processes are seamless and time differences don’t matter.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://cdn.cuberto.com/cb/img/services/advantage/1.png" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h3 style="font-size: 28px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Time zones ain’t no thing</h3>
+          <p style="font-size: 18px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Wherever you are in the world, you’ll feel like we’re right around the corner. With 10 years of experience, our business processes are seamless and time differences don’t matter.</p>
+        </div>
+       
+      </div>
+
+      <div class="row" style="margin-top: 100px;">
+        <div class="col-md-6">
+          <img src="https://cdn.cuberto.com/cb/img/services/advantage/1.png" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h3 style="font-size: 28px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Time zones ain’t no thing</h3>
+          <p style="font-size: 18px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Wherever you are in the world, you’ll feel like we’re right around the corner. With 10 years of experience, our business processes are seamless and time differences don’t matter.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://cdn.cuberto.com/cb/img/services/advantage/1.png" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <h3 style="font-size: 28px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Time zones ain’t no thing</h3>
+          <p style="font-size: 18px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Wherever you are in the world, you’ll feel like we’re right around the corner. With 10 years of experience, our business processes are seamless and time differences don’t matter.</p>
+        </div>
+       
+      </div>
+
+
+      
+      
+    </div> -->
+
+
+    <!-- <div class="container" style=" margin-top: 200px;margin-bottom: 100px;">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="text-align: center;font-size: 70px;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+            We carry out usability<br>
+            audits and field<br>
+            supervision
+          </h1>
+        </div>
+      </div>
+    </div> -->
+
+    <!------------------------------Responsive Projects----------------------------->
+
+    <div class="container Analysisr" >
+      <div class="row">
+        
+        <div class="col-md-12" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/1.png" style="width: 100%;" />
+          <p style="font-size: 30px;font-weight: bold;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Analysis</p>
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We will work with you to examine your product’s or service’s features, costs, availability, quality, and appearance to create a premium-level branding strategy that customers will love.</p>
+
+<button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="container Analysisr" >
+      <div class="row">
+        
+        <div class="col-md-12" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+
+          <img src="https://cdn.cuberto.com/cb/img/services/2.png" style="width: 100%;" />
+          <p style="font-size: 30px;font-weight: bold;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Branding</p>
+          
+          <p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Our mission is to create a strong, positive perception for you and your product using compelling imagery and precise messaging, all wrapped in an intuitive, straightforward package.</p>
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+       
+      </div>
+    </div>
+
+
+    <div class="container Analysisr" >
+      <div class="row">
+        
+        <div class="col-md-12" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+
+          <img src="https://cdn.cuberto.com/cb/img/services/3.jpg" style="width: 100%;" />
+          <p style="font-size: 30px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Customer experience</p>
+                    <p style="font-size: 17px;
+                    text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We won’t settle unless you are meeting your goals. We’ll create a framework that defines interactions between you and your customers throughout the entire customer journey, from the first contact to becoming a loyal and committed customer.</p>
+                    <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="container Analysisr" >
+      <div class="row">
+        
+        <div class="col-md-12" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+          <img src="https://cdn.cuberto.com/cb/img/services/4.jpg" style="width: 100%;" />
+ <p style="font-size: 30px;" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Digital design</p>
+<p style="font-size: 17px;
+          text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">We mesh the elements of line, colour, texture, size, shape, space, and value that capture the imagination and make a lasting, positive impression that will define your brand and make it stand out in crowded markets.</p>
+          <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+       
+      </div>
+    </div>
+
+
+    <div class="container Analysisr" >
+      <div class="row">
+        
+        <div class="col-md-12" data-aos="fade-right"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">
+
+          <img src="https://cdn.cuberto.com/cb/img/services/5.png" style="width: 100%;" />
+          <p style="font-size: 30px;" data-aos="fade-left"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Experience</p>
+                   <p style="font-size: 17px;
+                   text-align: justify;" data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000">Don’t settle for ordinary — let’s dream together. We’ll help you create a unique experience for your customers that makes your brand stand out from the competition, including a customised look, feel, and user experience.</p>
+                   <button type="button" class="casestudybtn hvr-underline-from-left" style="font-size: 18px;">Show Case Study</button>
+        </div>
+       
+      </div>
+    </div>
+    <!------------------------------Responsive Projects----------------------------->
+
+
+    
+    <div class="container lastbox " data-aos="fade-up"  data-aos-anchor-placement="top-bottom"  data-aos-duration="4000" style="margin-top: 200px;" style="width: 100%;">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>We go the extra mile.<br> Take a look at our work.
+            </h1>
+        </div>
+
+        <div class="col-md-5"  style="margin-top: 30px;text-align: center;">
+          <img src="{% static 'img/Uzability Arrow-01.png' %}" style="width: 20%;" class="hvr-wobble-horizontal"/>
+        </div>
+      </div>
+    </div>
+  
+
+    <footer style="background-color: black;padding: 50px;margin-top: 100px;">
+
+
+      <div class="container">
+         <div class="row">
+           <div class="col-md-3">
+           <a href="{% url 'app:getintouch' %}" >
+            <p style="color:#fff" class="hvr-underline-from-center"> Get in touch</p>
+          </a> 
+               <br>
+          <a href="{% url 'app:about' %}" >
+            <p style="color:#fff" class="hvr-underline-from-center"> About US</p>
+          </a> 
+          <br>
+          <a href="{% url 'app:work' %}" >
+            <p style="color:#fff" class="hvr-underline-from-center"> Projects</p>
+          </a> 
+          <br>
+          <a href="{% url 'app:home' %}" >
+            <p style="color:#fff" class="hvr-underline-from-center"> Home</p>
+          </a> 
+           </div>
+          
+           <div class="col-md-3" style ='margin-left:130px;'>
+           <p style="color:#fff">Riyadh<p style="color:#fff">Jeddah</p><p style="color:#fff">Eastern Province</p><p style="color:#fff">Neom</p></p> 
+           <br>
+           <a href="#"><i class="fab fa-twitter" style="color:white"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fab fa-facebook-square" style="color:white"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fab fa-linkedin-in" style="color:white"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fab fa-youtube" style="color:white"></i></a> 
+           </div>
+           <div class="col-md-3" style = 'margin-left:130px;'>
+             <p style="color:#fff">Uzability Design Studio</p>
+             <p style="color:rgba(238, 238, 238, 0.534)">Copyright @2021 <br>
+              All Rights Reeserved.</p>
+           </div>
+         </div>
+      </div>
+    
+      </footer>
+
+  
+
+    <!-- End your project here-->
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+    
+    <script>
+      AOS.init();
+    </script>
+
+
+  </body>
+</html>
