@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-r!zb5^jo4q!iasokkdepv86p9967+d)ewz^8g%5omu2co^84n%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['uza.studio']
 
 
 # Application definition
